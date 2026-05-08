@@ -14,6 +14,8 @@ IDX_WATCHLIST: dict[str, str] = {
     "KLBF.JK": "Kalbe Farma",
     "SMGR.JK": "Semen Indonesia",
     "FORE.JK": "Fore Coffee ",
+    "HRTA.JK": "Hartadinata Abadi",
+    "MINA.JK": "Sanurhasta Mitra ",
 }
  
 DATA_INTERVALS: list[str] = ["1m", "5m", "15m", "30m", "1h", "1d"]
