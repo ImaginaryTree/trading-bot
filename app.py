@@ -41,6 +41,8 @@ from core.data import fetch_watchlist_quotes
 from ui.analysis import render_analysis
 from ui.quant import render_quant
 from ui.scalping import render_scalping
+from ui.swing import render_swing
+from ui.volume_analysis import render_volume_analysis
 from ui.watchlist import render_watchlist
 from utils.formatting import market_status
 
@@ -112,8 +114,8 @@ def load_watchlist_quotes() -> list[dict]:
 # ── Main tabs ─────────────────────────────────────────────────────────────────
 st.title("IDX Stock Trading Bot Dashboard")
 
-tab_watch, tab_analysis, tab_scalp, tab_quant = st.tabs([
-    "📋 Watchlist", "🔍 Analysis", "⚡ Scalping", "📊 Quant"
+tab_watch, tab_analysis, tab_scalp, tab_quant, tab_vol, tab_swing = st.tabs([
+    "📋 Watchlist", "🔍 Analysis", "⚡ Scalping", "📊 Quant", "🧠 Smart Money", "📈 Swing"
 ])
 
 with tab_watch:
@@ -128,6 +130,12 @@ with tab_scalp:
 
 with tab_quant:
     render_quant(selected_ticker)
+
+with tab_vol:
+    render_volume_analysis(selected_ticker)
+
+with tab_swing:
+    render_swing(selected_ticker)
 
 # ── Auto-refresh ──────────────────────────────────────────────────────────────
 if auto_refresh:
